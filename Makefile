@@ -7,5 +7,5 @@ lint:
 gendiff:
 	node bin/gendiff.js
 
-gendiff -h:
+gendiff:
 	node gendiff -h
