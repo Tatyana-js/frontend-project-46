@@ -3,16 +3,18 @@ import process from 'node:process';
 import path from 'node:path';
 
 export const getFilePath = (file) => path.resolve(process.cwd(), '../__fixtures__', file);
-
 getFilePath();
-const parsing = (file) => {
-  const content = fs.readFileSync(getFilePath(file), 'utf8');
-  const format = path.extname(getFilePath(file));
-  switch (format) {
-    case '.json':
-      return JSON.parse(content);
-    default:
-      throw new Error('Unknown format!');
+
+export const getFileContent = (filePath) => fs.readFileSync(filePath, 'UTF-8');
+getFileContent();
+
+const parse = (file) => {
+  const filePath = getFilePath(file);
+  const format = path.extname(filePath).slice(1);
+  if (format === 'json') {
+    return JSON.parse(getFileContent(filePath));
+  } else if (format === 'YML' || ) {
+    return 
   }
 };
-export default parsing;
+export default parse;
