@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import { readFileSync } from 'node:fs';
 import process from 'node:process';
 import path from 'node:path';
 import _ from 'lodash';
@@ -10,7 +10,7 @@ export const getFilePath = (file) => {
 };
 
 export const getFileContent = (file) => {
-  const dataFale = fs.readFileSync(getFilePath(file), 'UTF-8');
+  const dataFale = readFileSync(getFilePath(file), 'UTF-8');
   return dataFale;
 };
 
