@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import process from 'node:process';
 import path from 'node:path';
 import _ from 'lodash';
-import parse from './parse.js';
+import parse from './parse';
 
 export const getFilePath = (file) => {
   const filePath = path.resolve(process.cwd(), './__fixtures__', file);
