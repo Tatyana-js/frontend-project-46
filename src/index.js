@@ -26,17 +26,18 @@ const gendiff = (filepath1, filepath2) => {
   const commonKeys = Object.keys({ ...data1, ...data2 }).sort();
   const result = commonKeys.map((key) => {
     if (_.has(data1, key) && _.has(data2, key) && (data1[key] !== data2[key])) {
-      return `- ${key}: ${data1[key]}\n+ ${key}: ${data2[key]}`;
+      return `- ${key}: ${data1[key]}\n+ ${key}: ${data2[key]}\n`;
     }
     if (_.has(data1, key) && _.has(data2, key)) {
-      return `  ${key}: ${data1[key]}`;
+      return `  ${key}: ${data1[key]}\n`;
     }
     if (_.has(data1, key) && !_.has(data2, key)) {
-      return `- ${key}: ${data1[key]}`;
+      return `- ${key}: ${data1[key]}\n`;
     }
-    return `+ ${key}: ${data2[key]}`;
+    return `+ ${key}: ${data2[key]}\n`;
   });
-  return result.join('\n');
+  const str = result.join('');
+  return `{\n${str}}`;
 };
 
 export default gendiff;
