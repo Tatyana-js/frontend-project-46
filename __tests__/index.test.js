@@ -10,8 +10,14 @@ const nameOfDir = dirname(filename);
 const getFilePath = (file) => path.join(nameOfDir, '..', '__fixtures__', file);
 const getFileContent = (file) => readFileSync(getFilePath(file), 'UTF-8');
 
-test('gendiff', () => {
+test('gendiff format json', () => {
   const file1 = getFilePath('file1.json');
   const file2 = getFilePath('file2.json');
+  expect(gendiff(file1, file2)).toEqual(getFileContent('expectJsonResult.txt'));
+});
+
+test('gendiff format yml', () => {
+  const file1 = getFilePath('file1.yml');
+  const file2 = getFilePath('file2.yml');
   expect(gendiff(file1, file2)).toEqual(getFileContent('expectJsonResult.txt'));
 });
