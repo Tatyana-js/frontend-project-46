@@ -12,3 +12,7 @@
 
 ### Gendiff two .json files:
 [![asciicast](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp.svg)](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp)
+
+
+### Gendiff two .yaml files:
+[![asciicast](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl.svg)](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl)
