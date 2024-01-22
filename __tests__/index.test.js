@@ -17,7 +17,7 @@ test('gendiff format json', () => {
 });
 
 test('gendiff format yml', () => {
-  const file1 = getFilePath('file1.yml');
-  const file2 = getFilePath('file2.yml');
+  const file1 = getFilePath('file1.yaml');
+  const file2 = getFilePath('file2.yaml');
   expect(gendiff(file1, file2)).toEqual(getFileContent('expectJsonResult.txt'));
 });
