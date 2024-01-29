@@ -1,8 +1,11 @@
+/* eslint-disable import/no-named-as-default */
 import { readFileSync } from 'node:fs';
 import process from 'node:process';
 import path from 'node:path';
-import _ from 'lodash';
 import parse from './parse.js';
+import getCommonTree from './createCommonTree.js';
+// eslint-disable-next-line import/no-named-as-default-member
+import getFormatFile from './formatters/formater.js';
 
 export const getFilePath = (file) => {
   const filePath = path.resolve(process.cwd(), './__fixtures__', file);
@@ -19,25 +22,16 @@ const getFormat = (filePath) => {
   return format;
 };
 
-const gendiff = (filepath1, filepath2) => {
-  const data1 = parse(getFileContent(filepath1), getFormat(filepath1));
-  const data2 = parse(getFileContent(filepath2), getFormat(filepath2));
-
-  const commonKeys = Object.keys({ ...data1, ...data2 }).sort();
-  const result = commonKeys.map((key) => {
-    if (_.has(data1, key) && _.has(data2, key) && (data1[key] !== data2[key])) {
-      return `- ${key}: ${data1[key]}\n+ ${key}: ${data2[key]}\n`;
-    }
-    if (_.has(data1, key) && _.has(data2, key)) {
-      return `  ${key}: ${data1[key]}\n`;
-    }
-    if (_.has(data1, key) && !_.has(data2, key)) {
-      return `- ${key}: ${data1[key]}\n`;
-    }
-    return `+ ${key}: ${data2[key]}\n`;
-  });
-  const str = result.join('');
-  return `{\n${str}}`;
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  const fileContent1 = getFileContent(filepath1);
+  const fileContent2 = getFileContent(filepath2);
+  const format1 = getFormat(filepath1);
+  const format2 = getFormat(filepath2);
+  const data1 = parse(fileContent1, format1);
+  const data2 = parse(fileContent2, format2);
+  const diff = getCommonTree(data1, data2);
+  const formatedFileDiff = getFormatFile(diff, format);
+  return formatedFileDiff;
 };
 
 export default gendiff;
