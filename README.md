@@ -16,3 +16,7 @@
 
 ### Gendiff two .yaml files:
 [![asciicast](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl.svg)](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl)
+
+### Gendiff two files - .json and .yaml with nesting:
+[![asciicast](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB.svg)](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB)
+

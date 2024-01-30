@@ -1,10 +1,8 @@
-/* eslint-disable import/no-named-as-default */
 import { readFileSync } from 'node:fs';
 import process from 'node:process';
 import path from 'node:path';
 import parse from './parse.js';
 import getCommonTree from './createCommonTree.js';
-// eslint-disable-next-line import/no-named-as-default-member
 import getFormatFile from './formatters/formater.js';
 
 export const getFilePath = (file) => {
