@@ -1,11 +1,12 @@
 import stylish from './stylish.js';
+import json from './json.js';
 
 const getFormatFile = (tree, format) => {
   switch (format) {
     case 'stylish':
       return stylish(tree);
     case 'json':
-      return JSON.stringify(tree, null, ' ');
+      return json(tree);
     default:
       throw new Error('Unknown format');
   }

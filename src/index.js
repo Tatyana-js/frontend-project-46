@@ -3,7 +3,7 @@ import process from 'node:process';
 import path from 'node:path';
 import parse from './parse.js';
 import getCommonTree from './createCommonTree.js';
-import getFormatFile from './formatters/formater.js';
+import getFormatFile from './formatters/index.js';
 
 export const getFilePath = (file) => {
   const filePath = path.resolve(process.cwd(), '__fixtures__', file);
