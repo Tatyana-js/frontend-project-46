@@ -1,4 +1,4 @@
-const expectResultStylish = `{
+{
     common: {
       + follow: false
         setting1: Value 1
@@ -41,6 +41,4 @@ const expectResultStylish = `{
         }
         fee: 100500
     }
-}`;
-
-export default expectResultStylish;
+}

@@ -1,12 +1,10 @@
-/* eslint-disable import/no-cycle */
 import _ from 'lodash';
-import gendiff from './index.js';
 
 const getCommonTree = (data1, data2) => {
   const commonKeys = Object.keys({ ...data1, ...data2 }).sort();
   const result = commonKeys.map((key) => {
-    if (_.isObject(data1) && _.isObject(data2)) {
-      return { key, value: (gendiff(data1[key], data2[key])), state: 'nested' };
+    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
+      return { key, value: ((getCommonTree(data1[key], data2[key]))), state: 'nested' };
     }
     if (!Object.hasOwn(data1, key)) {
       return { key, value: data2[key], state: 'added' };

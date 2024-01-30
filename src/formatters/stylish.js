@@ -28,7 +28,7 @@ const stylish = (tree) => {
       if (item.state === 'changed') {
         return [
           `${spaceCountBeforeStr}- ${item.key}: ${getFormatStr(item.value, depth + 1)}`,
-          `${spaceCountBeforeStr}+ ${item.key}: ${getFormatStr(item.value1, depth + 1)}`];
+          `${spaceCountBeforeStr}+ ${item.key}: ${getFormatStr(item.value2, depth + 1)}`];
       }
       if (item.state === 'unchanged') {
         return `${spaceCountBeforeStr}  ${item.key}: ${getFormatStr(item.value, depth + 1)}`;
