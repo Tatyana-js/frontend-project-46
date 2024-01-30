@@ -1,6 +1,5 @@
-/* eslint-disable object-curly-newline */
+/* eslint-disable import/no-cycle */
 import _ from 'lodash';
-// eslint-disable-next-line import/no-cycle
 import gendiff from './index.js';
 
 const getCommonTree = (data1, data2) => {
@@ -16,7 +15,9 @@ const getCommonTree = (data1, data2) => {
       return { key, value: data1[key], state: 'deleted' };
     }
     if ((data1[key] !== data2[key])) {
-      return { key, value: data1[key], value2: data2[key], state: 'changed' };
+      return {
+        key, value: data1[key], value2: data2[key], state: 'changed',
+      };
     }
     return { key, value: data1[key], state: 'unchanged' };
   });

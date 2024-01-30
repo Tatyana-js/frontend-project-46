@@ -8,7 +8,7 @@ import getCommonTree from './createCommonTree.js';
 import getFormatFile from './formatters/formater.js';
 
 export const getFilePath = (file) => {
-  const filePath = path.resolve(process.cwd(), './__fixtures__', file);
+  const filePath = path.resolve(process.cwd(), '__fixtures__', file);
   return filePath;
 };
 

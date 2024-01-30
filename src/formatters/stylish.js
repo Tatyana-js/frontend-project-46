@@ -8,7 +8,7 @@ const getFormatStr = (tree, depth = 0) => {
     const result = keys.map((key) => `${spaceCount}${key}: ${getFormatStr(tree[key], depth + 1)}`);
     return `{\n${result.join('\n')}\n${spaceCountForBracket}}`;
   }
-  return String(tree);
+  return tree;
 };
 
 const stylish = (tree) => {
