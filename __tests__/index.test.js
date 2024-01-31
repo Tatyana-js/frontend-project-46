@@ -22,11 +22,11 @@ test('gendiff format stylish for yml file', () => {
   expect(gendiff(file1, file2, 'stylish')).toEqual(getFileContent('expectStylishResult.txt'));
 });
 
-// test('gendiff format json', () => {
-//   const file1 = getFilePath('file1.json');
-//   const file2 = getFilePath('file2.json');
-//   expect(gendiff(file1, file2, 'json')).toEqual(getFileContent('expectResult.txt'));
-// });
+test('gendiff format json', () => {
+  const file1 = getFilePath('file1.json');
+  const file2 = getFilePath('file2.json');
+  expect(gendiff(file1, file2, 'json')).toEqual(getFileContent('expectJsonResult.json'));
+});
 
 test('gendiff format stylish for json and yaml files', () => {
   const file1 = getFilePath('file1.json');

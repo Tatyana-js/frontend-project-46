@@ -1,33 +1,34 @@
 import _ from 'lodash';
 
-const createStr = (tree) => {
-  if (_.Object(tree)) {
+const createStr = (value) => {
+  if (_.isObject(value)) {
     return '[complex value]';
   }
-  return typeof tree === 'string' ? `${tree}` : String(tree);
+  return typeof value === 'string' ? `'${value}'` : String(value);
 };
 
 const plain = (tree) => {
-  const iter = (node, depth = 1) => {
+  const iter = (node, path = '') => {
     const result = node.flatMap((item) => {
+      const currentPath = `${path}${item.key}`;
       if (item.state === 'nested') {
-        return `Property '${item.key}' was added with value: ${createStr(item.value, depth + 1)}`;
+        return iter(item.value, `${currentPath}.`);
       }
       if (item.state === 'added') {
-        return `Property '${item.key}' was added with value: ${item.value}`;
+        return `Property '${currentPath}' was added with value: ${createStr(item.value)}`;
       }
       if (item.state === 'deleted') {
-        return `Property '${item.key}' was removed`;
+        return `Property '${currentPath}' was removed`;
       }
       if (item.state === 'changed') {
-        return `Property '${item.key}' was updated. From ${item.value} to ${item.value2}`;
+        return `Property '${currentPath}' was updated. From ${createStr(item.value)} to ${createStr(item.value2)}`;
       }
       if (item.state === 'unchanged') {
         return [];
       }
       return 'Unknown format';
     });
-    return `{\n${result.join('\n')}}`;
+    return `${result.join('\n')}`;
   };
   return iter(tree);
 };
