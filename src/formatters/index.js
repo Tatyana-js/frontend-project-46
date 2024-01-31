@@ -1,5 +1,6 @@
 import stylish from './stylish.js';
 import json from './json.js';
+import plain from './plain.js';
 
 const getFormatFile = (tree, format) => {
   switch (format) {
@@ -7,6 +8,8 @@ const getFormatFile = (tree, format) => {
       return stylish(tree);
     case 'json':
       return json(tree);
+    case 'plain':
+      return plain(tree);
     default:
       throw new Error('Unknown format');
   }
