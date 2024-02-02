@@ -19,4 +19,3 @@
 
 ### Gendiff two files - .json and .yaml with nesting:
 [![asciicast](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB.svg)](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB)
-
