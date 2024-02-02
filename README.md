@@ -10,10 +10,25 @@
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d831aceb3d0a64fcdd86/test_coverage)](https://codeclimate.com/github/Tatyana-js/frontend-project-46/test_coverage)
 
+# Вычислитель отличий Gendiff
 
-### Installation:
+### Описание
+
+**Вычислитель отличий** - это утилита командной строки, предназначеная для отображения отличий между  двумя конфигурационными файлами. 
+* _Возможные входящие форматы:_
+    * json
+    * yaml
+    * yml
+* _Возможный результат вывода отличий:_
+    * json
+    * stylish
+    * plain
+
+### installation:
 ```
 git clone
+make install
+npm link
 ```
 
 ### Gendiff two .json files:
