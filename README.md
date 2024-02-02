@@ -10,6 +10,12 @@
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d831aceb3d0a64fcdd86/test_coverage)](https://codeclimate.com/github/Tatyana-js/frontend-project-46/test_coverage)
 
+
+### Installation:
+```
+git clone
+```
+
 ### Gendiff two .json files:
 [![asciicast](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp.svg)](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp)
 
