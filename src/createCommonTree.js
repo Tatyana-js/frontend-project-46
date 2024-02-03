@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
 const getCommonTree = (data1, data2) => {
-  const commonKeys = Object.keys({ ...data1, ...data2 }).sort();
-  const result = commonKeys.map((key) => {
+  const commonKeys = Object.keys({ ...data1, ...data2 });
+  const commonSortedKeys = _.sortBy(commonKeys);
+  const result = commonSortedKeys.map((key) => {
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
       return { key, value: ((getCommonTree(data1[key], data2[key]))), state: 'nested' };
     }
