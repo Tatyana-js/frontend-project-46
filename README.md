@@ -37,7 +37,6 @@ gendiff -h
 ### Gendiff two .json files:
 [![asciicast](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp.svg)](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp)
 
-
 ### Gendiff two .yaml files:
 [![asciicast](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl.svg)](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl)
 
@@ -46,3 +45,6 @@ gendiff -h
 
 ### Gendiff two files in plain format:
 [![asciicast](https://asciinema.org/a/siyZlWF6TxWdT1l1f0QnU7cAY.svg)](https://asciinema.org/a/siyZlWF6TxWdT1l1f0QnU7cAY)
+
+### Gendiff two files in json format:
+[![asciicast](https://asciinema.org/a/J9JE5r4xlWLUpgNY9EVBX5v2a.svg)](https://asciinema.org/a/J9JE5r4xlWLUpgNY9EVBX5v2a)
