@@ -26,11 +26,14 @@
 
 ### installation:
 ```
-git clone
-make install
+git clone git@github.com:Tatyana-js/frontend-project-46.git
+
 npm link
 ```
-
+### справочная информация по утилите 
+```
+gendiff -h
+```
 ### Gendiff two .json files:
 [![asciicast](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp.svg)](https://asciinema.org/a/GVIWHu4rVz9xpjG5WXKPUOOZp)
 
@@ -38,5 +41,8 @@ npm link
 ### Gendiff two .yaml files:
 [![asciicast](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl.svg)](https://asciinema.org/a/Owbb7sh8Pz2mqqH3EmTKmuhcl)
 
-### Gendiff two files - .json and .yaml with nesting:
+### Gendiff two files - .json and .yaml:
 [![asciicast](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB.svg)](https://asciinema.org/a/aTYkuyvOkUvt2Rioer5XaU4lB)
+
+### Gendiff two files in plain format:
+[![asciicast](https://asciinema.org/a/siyZlWF6TxWdT1l1f0QnU7cAY.svg)](https://asciinema.org/a/siyZlWF6TxWdT1l1f0QnU7cAY)
