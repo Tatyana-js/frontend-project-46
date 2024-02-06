@@ -1,109 +1,109 @@
 [
  {
   "key": "common",
-  "value": [
+  "children": [
    {
     "key": "follow",
-    "value": false,
-    "state": "added"
+    "value2": false,
+    "type": "added"
    },
    {
     "key": "setting1",
-    "value": "Value 1",
-    "state": "unchanged"
+    "value1": "Value 1",
+    "type": "unchanged"
    },
    {
     "key": "setting2",
-    "value": 200,
-    "state": "deleted"
+    "value1": 200,
+    "type": "deleted"
    },
    {
     "key": "setting3",
-    "value": true,
+    "value1": true,
     "value2": null,
-    "state": "changed"
+    "type": "changed"
    },
    {
     "key": "setting4",
-    "value": "blah blah",
-    "state": "added"
+    "value2": "blah blah",
+    "type": "added"
    },
    {
     "key": "setting5",
-    "value": {
+    "value2": {
      "key5": "value5"
     },
-    "state": "added"
+    "type": "added"
    },
    {
     "key": "setting6",
-    "value": [
+    "children": [
      {
       "key": "doge",
-      "value": [
+      "children": [
        {
         "key": "wow",
-        "value": "",
+        "value1": "",
         "value2": "so much",
-        "state": "changed"
+        "type": "changed"
        }
       ],
-      "state": "nested"
+      "type": "nested"
      },
      {
       "key": "key",
-      "value": "value",
-      "state": "unchanged"
+      "value1": "value",
+      "type": "unchanged"
      },
      {
       "key": "ops",
-      "value": "vops",
-      "state": "added"
+      "value2": "vops",
+      "type": "added"
      }
     ],
-    "state": "nested"
+    "type": "nested"
    }
   ],
-  "state": "nested"
+  "type": "nested"
  },
  {
   "key": "group1",
-  "value": [
+  "children": [
    {
     "key": "baz",
-    "value": "bas",
+    "value1": "bas",
     "value2": "bars",
-    "state": "changed"
+    "type": "changed"
    },
    {
     "key": "foo",
-    "value": "bar",
-    "state": "unchanged"
+    "value1": "bar",
+    "type": "unchanged"
    },
    {
     "key": "nest",
-    "value": {
+    "value1": {
      "key": "value"
     },
     "value2": "str",
-    "state": "changed"
+    "type": "changed"
    }
   ],
-  "state": "nested"
+  "type": "nested"
  },
  {
   "key": "group2",
-  "value": {
+  "value1": {
    "abc": 12345,
    "deep": {
     "id": 45
    }
   },
-  "state": "deleted"
+  "type": "deleted"
  },
  {
   "key": "group3",
-  "value": {
+  "value2": {
    "deep": {
     "id": {
      "number": 45
@@ -111,6 +111,6 @@
    },
    "fee": 100500
   },
-  "state": "added"
+  "type": "added"
  }
 ]

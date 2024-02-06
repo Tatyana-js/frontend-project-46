@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/Tatyana-js/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Tatyana-js/frontend-project-46/actions)",
+  "description": "Сalculating differences in files",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },

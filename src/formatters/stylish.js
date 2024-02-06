@@ -1,41 +1,39 @@
 import _ from 'lodash';
 
+const space = (depth, countSpace = 4) => ' '.repeat(depth * countSpace);
+const indent = ' '.repeat(2);
 const getFormatStr = (tree, depth = 0) => {
-  if (_.isObject(tree)) {
-    const spaceCount = ' '.repeat(depth * 4);
-    const spaceCountForBracket = ' '.repeat((depth - 1) * 4);
+  if (_.isPlainObject(tree)) {
     const keys = Object.keys(tree);
-    const result = keys.map((key) => `${spaceCount}${key}: ${getFormatStr(tree[key], depth + 1)}`);
-    return `{\n${result.join('\n')}\n${spaceCountForBracket}}`;
+    const result = keys.map((key) => `${space(depth)}${key}: ${getFormatStr(tree[key], depth + 1)}`);
+    return `{\n${result.join('\n')}\n${space(depth - 1)}}`;
   }
   return tree;
 };
 
 const stylish = (tree) => {
   const iter = (node, depth = 1) => {
-    const spaceCountBeforeStr = ' '.repeat(depth * 4 - 2);
-    const spaceCountForBracket = ' '.repeat((depth - 1) * 4);
     const result = node.flatMap((item) => {
-      if (item.state === 'nested') {
-        return `${spaceCountBeforeStr}  ${item.key}: ${iter(item.value, depth + 1)}`;
+      if (item.type === 'nested') {
+        return `${space(depth - 1)}${indent}  ${item.key}: ${iter(item.children, depth + 1)}`;
       }
-      if (item.state === 'added') {
-        return `${spaceCountBeforeStr}+ ${item.key}: ${getFormatStr(item.value, depth + 1)}`;
+      if (item.type === 'added') {
+        return `${space(depth - 1)}${indent}+ ${item.key}: ${getFormatStr(item.value2, depth + 1)}`;
       }
-      if (item.state === 'deleted') {
-        return `${spaceCountBeforeStr}- ${item.key}: ${getFormatStr(item.value, depth + 1)}`;
+      if (item.type === 'deleted') {
+        return `${space(depth - 1)}${indent}- ${item.key}: ${getFormatStr(item.value1, depth + 1)}`;
       }
-      if (item.state === 'changed') {
+      if (item.type === 'changed') {
         return [
-          `${spaceCountBeforeStr}- ${item.key}: ${getFormatStr(item.value, depth + 1)}`,
-          `${spaceCountBeforeStr}+ ${item.key}: ${getFormatStr(item.value2, depth + 1)}`];
+          `${space(depth - 1)}${indent}- ${item.key}: ${getFormatStr(item.value1, depth + 1)}`,
+          `${space(depth - 1)}${indent}+ ${item.key}: ${getFormatStr(item.value2, depth + 1)}`];
       }
-      if (item.state === 'unchanged') {
-        return `${spaceCountBeforeStr}  ${item.key}: ${getFormatStr(item.value, depth + 1)}`;
+      if (item.type === 'unchanged') {
+        return `${space(depth - 1)}${indent}  ${item.key}: ${getFormatStr(item.value1, depth + 1)}`;
       }
       return 'Unknown format';
     });
-    return `{\n${result.join('\n')}\n${spaceCountForBracket}}`;
+    return `{\n${result.join('\n')}\n${space(depth - 1)}}`;
   };
   return iter(tree);
 };
