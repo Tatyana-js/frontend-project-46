@@ -1,14 +1,17 @@
-import stylish from './stylish.js';
-import plain from './plain.js';
+import getStylish from './stylish.js';
+import getPlain from './plain.js';
 
+const formater = {
+  json: JSON.stringify,
+  stylish: getStylish,
+  plain: getPlain,
+};
 const getFormatFile = (tree, format) => {
-  if (format === 'json') {
-    return JSON.stringify(tree, null, ' ');
+  try {
+    return formater[format](tree);
+  } catch (err) {
+    return 'Unknow format';
   }
-  if (format === 'stylish') {
-    return stylish(tree);
-  }
-  return plain(tree);
 };
 
 export default getFormatFile;

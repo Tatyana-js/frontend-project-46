@@ -7,7 +7,7 @@ const createStr = (value) => {
   return typeof value === 'string' ? `'${value}'` : String(value);
 };
 
-const plain = (tree) => {
+const getPlain = (tree) => {
   const iter = (node, path = '') => {
     const result = node.flatMap((item) => {
       const currentPath = `${path}${item.key}`;
@@ -32,4 +32,4 @@ const plain = (tree) => {
   };
   return iter(tree);
 };
-export default plain;
+export default getPlain;

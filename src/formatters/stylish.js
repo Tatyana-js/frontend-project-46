@@ -11,7 +11,7 @@ const getFormatStr = (tree, depth = 0) => {
   return tree;
 };
 
-const stylish = (tree) => {
+const getStylish = (tree) => {
   const iter = (node, depth = 1) => {
     const result = node.flatMap((item) => {
       if (item.type === 'nested') {
@@ -37,4 +37,4 @@ const stylish = (tree) => {
   };
   return iter(tree);
 };
-export default stylish;
+export default getStylish;
